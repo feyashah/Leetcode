@@ -1,0 +1,39 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+       
+        vector<int> ans;
+        int copy = 0;
+        int i = 0;
+        int j = 0;
+        int a,b,c;
+        while( i < nums.size())
+        {
+            a = nums.at(i);
+            for(j = i + 1; j < nums.size(); j++)
+            {
+                b = nums.at(j);
+                if( a + b == target)
+                    goto Ans;
+            }
+            i = i + 1;
+        }
+        Ans :
+        ans.push_back(i);
+        ans.push_back(j);
+        cout<<"[";
+        for( int m=0; m< ans.size(); m++)
+        {
+            if(m == ans.size()-1)
+            {
+                cout<<ans.at(m);
+            }
+            else
+            {
+                cout<<ans.at(m)<<",";
+            }
+        }   
+        cout<<"]";
+        return ans;
+    }
+};

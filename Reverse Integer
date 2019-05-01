@@ -1,0 +1,42 @@
+class Solution {
+public:
+    int reverse(int x) {
+        
+        vector<int> y;
+        int temp;
+        int i = 0;
+        long copy = x;
+        int size = y.size();
+        if(x == 0)
+        {
+            return i;
+        }
+        if(x < 0)
+        {
+            copy = abs(copy);
+        }
+        while( copy != 0)
+        {
+            temp = copy % 10;
+            y.push_back(temp);
+            copy = copy / 10;
+        }
+        string xy = "";
+        if(x < 0)
+        {
+            xy += "-";
+        }
+        for(int j = 0; j < y.size(); j++)
+        {
+            xy += to_string(y[j]);
+        }
+        stringstream rev(xy);
+        int revnum;
+        rev >> revnum;
+        if(revnum == -2147483648 || revnum == 2147483647)
+        {
+            return 0;
+        }
+        return revnum;
+    }   
+};
